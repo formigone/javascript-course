@@ -53,20 +53,20 @@
       <hr/>
       <div class="color-choice color-choice-main" id="color-selection"></div>
       <hr/>
-      <div class="color-choice color-black"></div>
-      <div class="color-choice color-white"></div>
-      <div class="color-choice color-gray-dark"></div>
-      <div class="color-choice color-gray-light"></div>
-      <div class="color-choice color-red-dark"></div>
-      <div class="color-choice color-red-light"></div>
-      <div class="color-choice color-green-dark"></div>
-      <div class="color-choice color-green-light"></div>
-      <div class="color-choice color-blue-dark"></div>
-      <div class="color-choice color-blue-light"></div>
-      <div class="color-choice color-yellow-dark"></div>
-      <div class="color-choice color-yellow-light"></div>
-      <div class="color-choice color-purple"></div>
-      <div class="color-choice color-pink"></div>
+      <div class="color-choice color-black" id="color-black"></div>
+      <div class="color-choice color-white" id="color-white"></div>
+      <div class="color-choice color-gray-dark" id="color-gray-dark"></div>
+      <div class="color-choice color-gray-light" id="color-gray-light"></div>
+      <div class="color-choice color-red-dark" id="color-red-dark"></div>
+      <div class="color-choice color-red-light" id="color-red-light"></div>
+      <div class="color-choice color-green-dark" id="color-green-dark"></div>
+      <div class="color-choice color-green-light" id="color-green-light"></div>
+      <div class="color-choice color-blue-dark" id="color-blue-dark"></div>
+      <div class="color-choice color-blue-light" id="color-blue-light"></div>
+      <div class="color-choice color-yellow-dark" id="color-yellow-dark"></div>
+      <div class="color-choice color-yellow-light" id="color-yellow-light"></div>
+      <div class="color-choice color-purple" id="color-purple"></div>
+      <div class="color-choice color-pink" id="color-pink"></div>
     </div>
     <div class="col-md-11">
         <canvas class="canvas" id="canvas" style="background: #fff"></canvas>
@@ -78,6 +78,30 @@
 <script>
   main({
     canvas: document.getElementById('canvas'),
+    tools: {
+      save: document.getElementById('action-save'),
+      text: document.getElementById('action-text'),
+      erase: document.getElementById('action-erase'),
+      pencil: document.getElementById('action-pencil'),
+      brush: document.getElementById('action-brush'),
+    },
+    colors: {
+      active: document.getElementById('color-selection'),
+      black: document.getElementById('color-black'),
+      white: document.getElementById('color-white'),
+      grayDark: document.getElementById('color-gray-dark'),
+      grayLight: document.getElementById('color-gray-light'),
+      redDark: document.getElementById('color-red-dark'),
+      redLight: document.getElementById('color-red-light'),
+      greenDark: document.getElementById('color-green-dark'),
+      greenLight: document.getElementById('color-green-light'),
+      blueDark: document.getElementById('color-blue-dark'),
+      blueLight: document.getElementById('color-blue-light'),
+      yellowDark: document.getElementById('color-yellow-dark'),
+      yellowLight: document.getElementById('color-yellow-light'),
+      purple: document.getElementById('color-purple'),
+      pink: document.getElementById('color-pink'),
+    }
   })
 </script>
 </body>
