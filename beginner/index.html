@@ -35,7 +35,7 @@
       <button class="btn btn-default" disabled id="action-import">
         <span class="fa fa-file-image-o"></span>
       </button>
-      <button class="btn btn-default" id="action-save">
+      <button class="btn btn-default" disabled id="action-save">
         <span class="fa fa-save"></span>
       </button>
       <button class="btn btn-default" id="action-text">
@@ -79,7 +79,6 @@
   main({
     canvas: document.getElementById('canvas'),
     tools: {
-      save: document.getElementById('action-save'),
       text: document.getElementById('action-text'),
       erase: document.getElementById('action-erase'),
       pencil: document.getElementById('action-pencil'),

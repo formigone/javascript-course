@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d3de8757-bee1-4e05-9613-197e62e8b556" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beginner/css/app.css" afterPath="$PROJECT_DIR$/beginner/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beginner/index.html" afterPath="$PROJECT_DIR$/beginner/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beginner/js/app.js" afterPath="$PROJECT_DIR$/beginner/js/app.js" />
     </list>
@@ -23,8 +22,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/beginner/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+            <state relative-caret-position="633">
+              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#canvas#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -35,8 +34,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/beginner/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="534">
+              <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="54" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -71,6 +70,7 @@
       <find>(\w+)\-(\w+):</find>
       <find>: '</find>
       <find>color-choicecolor-</find>
+      <find>initializeCanvas</find>
     </findStrings>
     <replaceStrings>
       <replace>{</replace>
@@ -297,12 +297,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487635273256</updated>
       <workItem from="1487635277200" duration="876000" />
-      <workItem from="1487637483926" duration="5155000" />
+      <workItem from="1487637483926" duration="7529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6031000" />
+    <option name="totallyTimeSpent" value="8405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -390,8 +390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/beginner/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="68" column="37" lean-forward="false" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+        <state relative-caret-position="633">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -400,8 +400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/beginner/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="534">
+          <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="54" selection-end-column="3" />
           <folding />
         </state>
       </provider>
