@@ -15,7 +15,7 @@
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img alt="Brand" src="img/formigone-icon-72.png">
       </a>
     </div>
@@ -38,7 +38,7 @@
       <button class="btn btn-default" disabled id="action-save">
         <span class="fa fa-save"></span>
       </button>
-      <button class="btn btn-default" id="action-text">
+      <button class="btn btn-default" disabled id="action-text">
         <span class="fa fa-font"></span>
       </button>
       <button class="btn btn-default" id="action-erase">
@@ -79,7 +79,6 @@
   main({
     canvas: document.getElementById('canvas'),
     tools: {
-      text: document.getElementById('action-text'),
       erase: document.getElementById('action-erase'),
       pencil: document.getElementById('action-pencil'),
       brush: document.getElementById('action-brush'),

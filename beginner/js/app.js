@@ -2,24 +2,31 @@ function main(options) {
   var canvas = initializeCanvas(options.canvas);
   var tools = Object.assign({}, { selected: null }, options.tools);
   var colors = Object.assign({}, { selected: null }, options.colors);
+  var lastPt = [];
 
-  initializeActions(tools);
-  selectTool(tools, 'pencil');
+  canvas.colors = colors;
 
-  initializeColors(colors);
-  selectColor(colors, 'black');
+  initializeColors(colors, canvas);
+  selectColor(colors, 'black', function() {
+    canvas.ctx.strokeStyle = '#000';
+  });
+
+  initializeActions(tools, canvas, colors);
+  selectTool(tools, 'pencil', function() {
+    canvas.ctx.lineCap = 'round';
+  });
 
   var mouseDown = false;
-  var queue = [];
 
   canvas.el.addEventListener('mousedown', function (event) {
     mouseDown = true;
     var x = event.offsetX;
     var y = event.offsetY;
-    plot(tools.selected, canvas, x, y);
+    lastPt = plot(tools.selected, canvas, x, y, lastPt);
   });
 
   canvas.el.addEventListener('mouseup', function () {
+    lastPt = [];
     mouseDown = false;
   });
 
@@ -30,29 +37,33 @@ function main(options) {
 
     var x = event.offsetX;
     var y = event.offsetY;
-    plot(tools.selected, canvas, x, y);
+    lastPt = plot(tools.selected, canvas, x, y, lastPt);
   });
 }
 
-  function plot(tool, canvas, x, y) {
-    var kernel = [];
-
-    if (tool === 'pencil') {
-      kernel.push([x, y]);
-    } else if (tool === 'brush') {
-      for (var w = -5; w < 5; w++) {
-        for (var h = -5; h < 5; h++) {
-          kernel.push([x - w, y - h]);
-        }
-      }
+function plot(activeTool, canvas, x, y, lastPt) {
+  if (activeTool === 'erase') {
+    if (lastPt.length) {
+      canvas.ctx.beginPath();
+      canvas.ctx.moveTo(lastPt[0], lastPt[1]);
+      canvas.ctx.lineTo(x, y);
+      canvas.ctx.stroke();
+    } else {
+      canvas.ctx.fillRect(x, y, 1, 1);
     }
-
-    if (kernel.length > 0) {
-      kernel.map(function (pt) {
-        canvas.ctx.fillRect(pt[0], pt[1], 1, 1);
-      });
+  } else if (activeTool === 'pencil' || activeTool === 'brush') {
+    if (lastPt.length) {
+      canvas.ctx.beginPath();
+      canvas.ctx.moveTo(lastPt[0], lastPt[1]);
+      canvas.ctx.lineTo(x, y);
+      canvas.ctx.stroke();
+    } else {
+      canvas.ctx.fillRect(x, y, 1, 1);
     }
   }
+
+  return [x, y];
+}
 
 function initializeCanvas(canvas) {
   var parent = canvas.parentElement;
@@ -67,7 +78,7 @@ function initializeCanvas(canvas) {
   };
 }
 
-function selectTool(tools, action) {
+function selectTool(tools, action, cb) {
   tools.selected = action;
   Object.keys(tools).map(function (tool) {
     if (tools[tool] instanceof HTMLElement) {
@@ -78,29 +89,49 @@ function selectTool(tools, action) {
       tools[tool].classList.add('active');
     }
   });
+
+  if (cb instanceof Function) {
+    cb(action);
+  }
 }
 
-function initializeActions(tools) {
-  Object.keys(tools).map(function (tool) {
+function initializeActions(tools, canvas) {
+  Object.keys(tools).forEach(function (tool) {
     if (tools[tool] instanceof HTMLElement) {
       tools[tool].addEventListener('click', function () {
-        selectTool(tools, tool);
+        var style = getComputedStyle(canvas.colors[canvas.colors.selected]);
+        canvas.ctx.strokeStyle = style.backgroundColor;
+        selectTool(tools, tool, function (action) {
+          if (action === 'pencil') {
+            canvas.ctx.lineWidth = 1;
+          } else if (action === 'brush') {
+            canvas.ctx.lineWidth = 10;
+          } else if (action === 'erase') {
+            canvas.ctx.lineWidth = 10;
+            canvas.ctx.strokeStyle = '#fff';
+          }
+        });
       });
     }
   });
 }
 
-function selectColor(colors, color) {
+function selectColor(colors, color, cb) {
   var style = getComputedStyle(colors[color]);
   colors.selected = color;
   colors.active.style.background = style.background;
+  if (cb instanceof Function) {
+    cb(style.backgroundColor);
+  }
 }
 
-function initializeColors(colors) {
-  Object.keys(colors).map(function (color) {
+function initializeColors(colors, canvas) {
+  Object.keys(colors).forEach(function (color) {
     if (colors[color] instanceof HTMLElement && color !== 'active') {
       colors[color].addEventListener('click', function () {
-        selectColor(colors, color);
+        selectColor(colors, color, function(color) {
+          canvas.ctx.strokeStyle = color;
+        });
       });
     }
   });
