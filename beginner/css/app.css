@@ -1,0 +1,95 @@
+body {
+    background: #eee;
+}
+
+.navbar {
+    background: #fff;
+    height: 75px;
+    box-shadow: 0 1px 1px #333;
+    border-radius: 0;
+}
+
+.navbar img {
+    margin-top: -16px;
+    width: 75px;
+    height: 75px;
+}
+
+.btn {
+    margin-bottom: 5px;
+}
+
+.canvas {
+    box-shadow: 0 1px 1px #333;
+}
+
+.color-choice {
+    width: 35px;
+    height: 35px;
+    background: #c00;
+    border: 1px solid #333;
+    float: left;
+    margin: 5px;
+}
+
+.color-choice-main {
+    width: 80px;
+    box-shadow: inset 0 1px 5px #333;
+    clear: both;
+}
+
+.color-black {
+    background: #000;
+}
+
+.color-white {
+    background: #fff;
+}
+
+.color-gray-dark {
+    background: #555;
+}
+
+.color-gray-light {
+    background: #ddd;
+}
+
+.color-red-dark {
+    background: #500;
+}
+
+.color-red-light {
+    background: #c00;
+}
+
+.color-green-dark {
+    background: #050;
+}
+
+.color-green-light {
+    background: #0c0;
+}
+
+.color-blue-dark {
+    background: #005;
+}
+
+.color-blue-light {
+    background: #00c;
+}
+
+.color-yellow-dark {
+    background: #978400;
+}
+
+.color-yellow-light {
+    background: #ffe400;
+}
+
+.color-purple {
+    background: #750e71;
+}
+
+.color-pink {
+    background: #cc12c3;
+}

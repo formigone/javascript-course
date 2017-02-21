@@ -1,0 +1,84 @@
+<!doctype>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Beginner JavaScript</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="img/formigone-icon-72.png">
+      </a>
+    </div>
+    <h3>Beginner JavaScript Course: Drawing App</h3>
+  </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-1">
+      <button class="btn btn-default" disabled id="action-undo">
+        <span class="fa fa-undo"></span>
+      </button>
+      <button class="btn btn-default" disabled id="action-redo">
+        <span class="fa fa-repeat"></span>
+      </button>
+      <button class="btn btn-default" disabled id="action-import">
+        <span class="fa fa-file-image-o"></span>
+      </button>
+      <button class="btn btn-default" id="action-save">
+        <span class="fa fa-save"></span>
+      </button>
+      <button class="btn btn-default" id="action-text">
+        <span class="fa fa-font"></span>
+      </button>
+      <button class="btn btn-default" id="action-erase">
+        <span class="fa fa-eraser"></span>
+      </button>
+      <button class="btn btn-default" id="action-pencil">
+        <span class="fa fa-pencil"></span>
+      </button>
+      <button class="btn btn-default" id="action-brush">
+        <span class="fa fa-paint-brush"></span>
+      </button>
+      <hr/>
+      <div class="color-choice color-choice-main" id="color-selection"></div>
+      <hr/>
+      <div class="color-choice color-black"></div>
+      <div class="color-choice color-white"></div>
+      <div class="color-choice color-gray-dark"></div>
+      <div class="color-choice color-gray-light"></div>
+      <div class="color-choice color-red-dark"></div>
+      <div class="color-choice color-red-light"></div>
+      <div class="color-choice color-green-dark"></div>
+      <div class="color-choice color-green-light"></div>
+      <div class="color-choice color-blue-dark"></div>
+      <div class="color-choice color-blue-light"></div>
+      <div class="color-choice color-yellow-dark"></div>
+      <div class="color-choice color-yellow-light"></div>
+      <div class="color-choice color-purple"></div>
+      <div class="color-choice color-pink"></div>
+    </div>
+    <div class="col-md-11">
+        <canvas class="canvas" id="canvas" style="background: #fff"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  main({
+    canvas: document.getElementById('canvas'),
+  })
+</script>
+</body>
+</html>

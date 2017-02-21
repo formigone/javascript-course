@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "beginner": "http-server beginner"
   },
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/formigone/javascript-course#readme"
+  "homepage": "https://github.com/formigone/javascript-course#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
 }
